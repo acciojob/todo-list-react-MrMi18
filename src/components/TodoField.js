@@ -15,15 +15,14 @@ const TodoField = ({ todo, setList }) => {
 
   return (
     <div className="tasks_section">
-      {/* Make input disabled when not editing */}
       <input
-      className="task"
+        className="task"
         type="text"
         value={inputTd}
         onChange={(e) => setInputId(e.target.value)}
-        disabled={!isEditing} // ✅ This prevents typing unless editing
+        disabled={!isEditing} // ✅ Prevent editing until clicking "Edit"
       />
-      <button className={isEditing?"edit":"save"} onClick={() => setIsEditing(!isEditing)}>
+      <button className={isEditing ? "save" : "edit"} onClick={() => setIsEditing(!isEditing)}>
         {isEditing ? "Save" : "Edit"}
       </button>
       <button className="delete" onClick={deleteTodo}>Delete</button>

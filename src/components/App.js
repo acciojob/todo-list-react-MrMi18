@@ -16,15 +16,17 @@ const App = () => {
   return (
     <div>
       <h1>Todo List</h1>
+      
       <div className="add_tasks_section">
-        <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
+        <textarea value={todo} onChange={(e) => setTodo(e.target.value)} />
         <button onClick={addTodoHandler}>Add</button>
       </div>
       
+      <div className="tasks_section">
         {list.length > 0 && list.map((td, index) => (
           <TodoField key={index} todo={td} setList={setList} />
         ))}
-    
+      </div>
       
     </div>
   );
