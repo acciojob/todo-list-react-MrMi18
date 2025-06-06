@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div>
       <div className="add_tasks_section">
-          <h3>Add a Task</h3> 
+          <h3>To Do List</h3> 
           <textarea value={todo} onChange={(e) => setTodo(e.target.value)} />
           <button onClick={addTodoHandler}>Add</button>
       </div>
