@@ -7,20 +7,21 @@ const App = () => {
   const [todo, setTodo] = useState("");
 
   const addTodoHandler = () => {
-    if (todo.trim() !== "") {
-      setList([...list, todo]);
-      setTodo("");
-    }
-  };
+  if (todo.trim() !== "") {
+    setList([...list, todo]);  
+    setTodo("");  
+  }
+};
+
 
   return (
     <div>
-      <h1>Todo List</h1>
-      
       <div className="add_tasks_section">
-        <textarea value={todo} onChange={(e) => setTodo(e.target.value)} />
-        <button onClick={addTodoHandler}>Add</button>
+          <h3>Add a Task</h3> 
+          <textarea value={todo} onChange={(e) => setTodo(e.target.value)} />
+          <button onClick={addTodoHandler}>Add</button>
       </div>
+
       
       <div className="tasks_section">
         {list.length > 0 && list.map((td, index) => (

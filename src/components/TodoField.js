@@ -15,13 +15,13 @@ const TodoField = ({ todo, setList }) => {
 
   return (
     <div className="tasks_section">
-      <input
-        className="task"
-        type="text"
-        value={inputTd}
-        onChange={(e) => setInputId(e.target.value)}
-        disabled={!isEditing} // ✅ Prevent editing until clicking "Edit"
-      />
+      <textarea
+  className="task"
+  value={inputTd}
+  onChange={(e) => setInputId(e.target.value)}
+  disabled={!isEditing} // ✅ Prevent editing until clicking "Edit"
+></textarea>
+
       <button className={isEditing ? "save" : "edit"} onClick={() => setIsEditing(!isEditing)}>
         {isEditing ? "Save" : "Edit"}
       </button>
